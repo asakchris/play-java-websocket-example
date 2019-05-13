@@ -9,7 +9,7 @@ testOptions += Tests.Argument(TestFrameworks.JUnit, "-a", "-v")
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava, UniversalPlugin, DockerPlugin)
 
-dockerEntrypoint := Seq("bin/akka-cluster-sample")
+dockerEntrypoint := Seq("bin/play-java-websocket-example")
 dockerRepository := Some("asakchris")
 dockerUpdateLatest := true
 dockerExposedPorts := Seq(9000)
