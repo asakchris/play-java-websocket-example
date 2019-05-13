@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                           controllers.HomeController.index(request :Request)
+GET     /ws                         controllers.HomeController.ws
+GET     /sentiment/:symbol          controllers.StockSentiment.get(symbol)
+
+GET     /wsConnect                  controllers.HomeController.connect
+GET     /wsJsonConnect              controllers.HomeController.jsonConnect
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+->          /webjars                webjars.Routes
