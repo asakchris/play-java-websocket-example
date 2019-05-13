@@ -13,6 +13,7 @@ dockerEntrypoint := Seq("bin/play-java-websocket-example")
 dockerRepository := Some("asakchris")
 dockerUpdateLatest := true
 dockerExposedPorts := Seq(9000)
+javaOptions in Universal ++= Seq("-Dplay.server.pidfile.path=/dev/null")
 
 maintainer := "christopher.kamaraj@gmail.com"
 
