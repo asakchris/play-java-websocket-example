@@ -15,4 +15,5 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 ->          /webjars                webjars.Routes
 
 # Health check
-GET     /health                                 controllers.HealthCheck.health
++anyhost
+GET     /health                     controllers.HealthCheck.health
