@@ -7,7 +7,14 @@ scalaVersion := "2.12.8"
 // https://github.com/sbt/junit-interface
 testOptions += Tests.Argument(TestFrameworks.JUnit, "-a", "-v")
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
+lazy val root = (project in file(".")).enablePlugins(PlayJava, UniversalPlugin, DockerPlugin)
+
+dockerEntrypoint := Seq("bin/akka-cluster-sample")
+dockerRepository := Some("asakchris")
+dockerUpdateLatest := true
+dockerExposedPorts := Seq(9000)
+
+maintainer := "christopher.kamaraj@gmail.com"
 
 libraryDependencies += guice
 libraryDependencies += ws
