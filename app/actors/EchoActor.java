@@ -21,7 +21,7 @@ public class EchoActor extends AbstractLoggingActor {
                 })
                 .match(Request.class, rqst -> {
                     log().info("Received Request message: {}", rqst);
-                    out.tell(rqst.getMessage(), self());
+                    out.tell(rqst, self());
                 })
                 .match(Object.class, obj -> {
                     log().info("Received Object message: {}", obj);

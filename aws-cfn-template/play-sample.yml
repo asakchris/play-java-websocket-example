@@ -131,10 +131,10 @@ Resources:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
       Name: 'PLAY-WEB-TG'
-      HealthCheckIntervalSeconds: 6
+      HealthCheckIntervalSeconds: 150
       HealthCheckPath: /health
       HealthCheckProtocol: HTTP
-      HealthCheckTimeoutSeconds: 5
+      HealthCheckTimeoutSeconds: 120
       HealthyThresholdCount: 2
       UnhealthyThresholdCount: 2
       TargetType: ip
